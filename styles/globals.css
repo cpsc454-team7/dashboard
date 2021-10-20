@@ -1,9 +1,19 @@
-html,
-body {
+@import url("normalize.css");
+
+:root {
+  /* Colors */
+  --color-dark: #201A23;
+  --color-light: #ffffff;
+  --color-brand: #575fcf;
+}
+
+html, body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: var(--color-dark);
+  color: var(--color-light);
 }
 
 a {
@@ -13,4 +23,18 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+h2 {
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+.recharts-tooltip-label {
+  color: #333333;
 }
