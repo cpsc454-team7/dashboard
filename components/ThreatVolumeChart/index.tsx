@@ -16,14 +16,16 @@ function mockData() {
   const today = new Date();
   const start = new Date(new Date().setDate(today.getDate() - DAYS_AGO));
   for (let curr = start; curr <= today; curr.setDate(curr.getDate() + 1)) {
-    console.log(curr);
     data.push({
       name: curr.toLocaleDateString("en-US"),
       volume: randomBetween(30, 100),
     });
   }
 
-  console.log(data);
+  data.push({
+    name: "",
+    volume: randomBetween(30, 100),
+  });
 
   return data;
 }

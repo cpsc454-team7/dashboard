@@ -1,6 +1,8 @@
+import Grid from "@react-css/grid";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Container from "../components/Container";
+import ThreatCategoryChart from "../components/ThreatCategoryChart";
 import ThreatVolumeChart from "../components/ThreatVolumeChart";
 
 const Home: NextPage = () => {
@@ -13,7 +15,19 @@ const Home: NextPage = () => {
       </Head>
 
       <Container>
-        <ThreatVolumeChart/>
+        <Grid columns="1fr 1fr" gap="2em">
+          <Grid.Item column="1 / span 2">
+            <ThreatVolumeChart/>
+          </Grid.Item>
+
+          <Grid.Item column="1 / 2">
+            <h2>Recent Alerts</h2>
+          </Grid.Item>
+
+          <Grid.Item column="2 / span 2">
+            <ThreatCategoryChart />
+          </Grid.Item>
+        </Grid>
       </Container>
     </>
   );
