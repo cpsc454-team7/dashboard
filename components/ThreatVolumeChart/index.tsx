@@ -34,23 +34,20 @@ const data = mockData();
 
 const ThreatVolumeChart = () => {
   return (
-    <div>
-      <h2>THREATS THIS WEEK</h2>
-      <div className={styles.container}>
-        <ResponsiveContainer height="100%" width="100%">
-          <AreaChart data={data}>
-            <defs>
-              <linearGradient id="colorVolume" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#FF4242" stopOpacity={0.8} />
-                <stop offset="80%" stopColor="#FF4242" stopOpacity={0} />
-              </linearGradient>
-            </defs>
-            <Area type="monotone" dataKey="volume" stroke="#FF4242" fillOpacity={1} fill="url(#colorVolume)" />
-            <XAxis dataKey="name" tickLine={false} />
-            <Tooltip label="Test" />
-          </AreaChart>
-        </ResponsiveContainer>
-      </div>
+    <div className={styles.container}>
+      <ResponsiveContainer height="100%" width="100%">
+        <AreaChart data={data}>
+          <defs>
+            <linearGradient id="colorVolume" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#FF4242" stopOpacity={0.8} />
+              <stop offset="80%" stopColor="#FF4242" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <Area type="monotone" dataKey="volume" stroke="#FF4242" fillOpacity={1} fill="url(#colorVolume)" />
+          <XAxis dataKey="name" tickLine={false} />
+          <Tooltip label="Test" />
+        </AreaChart>
+      </ResponsiveContainer>
     </div>
   );
 }

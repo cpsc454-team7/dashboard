@@ -33,27 +33,22 @@ function mockData() {
 
 const data = mockData();
 
-const ThreatCategoryChart = () => {
-  return (
-    <div>
-      <h2>THREATS BY CATEGORY</h2>
-      <div className={styles.container}>
-        <ResponsiveContainer height="100%" width="100%">
-          <PieChart>
-            <Pie data={data} cx="50%" cy="50%" dataKey="volume" nameKey="name" outerRadius={80} label>
-                {
-                    data.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color}/>
-                    ))
-                }
-            </Pie>
-            <Legend />
-            <Tooltip />
-          </PieChart>
-        </ResponsiveContainer>
-      </div>
-    </div>
-  );
-}
+const ThreatCategoryChart = () => (
+  <div className={styles.container}>
+    <ResponsiveContainer height="100%" width="100%">
+      <PieChart>
+        <Pie data={data} cx="50%" cy="50%" dataKey="volume" nameKey="name" outerRadius={80} innerRadius={60} paddingAngle={5} label>
+            {
+                data.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} stroke="none"/>
+                ))
+            }
+        </Pie>
+        <Legend />
+        <Tooltip />
+      </PieChart>
+    </ResponsiveContainer>
+  </div>
+);
 
 export default ThreatCategoryChart;

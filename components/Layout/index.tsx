@@ -1,14 +1,16 @@
 import { FC } from "react";
 
 import Navbar from "../Navbar";
+import Footer from "../Footer";
 
-const Layout: FC<{}> = ({ children }) => {
-    return (
-        <>
-            <Navbar>Hi</Navbar>
-            <main>{ children }</main>
-        </>
-    );
-}
+import styles from "./Layout.module.css";
+
+const Layout: FC<{}> = ({ children }) => (
+  <div className={styles.layout}>
+    <Navbar>Hi</Navbar>
+    <main className={styles.main}>{children}</main>
+    <Footer />
+  </div>
+);
 
 export default Layout;
