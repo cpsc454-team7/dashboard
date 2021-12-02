@@ -3,8 +3,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import AlertSummary from "../components/AlertSummary";
 import Container from "../components/Container";
+import NetworkVolumeChart from "../components/NetworkVolumeChart";
 import ThreatCategoryChart from "../components/ThreatCategoryChart";
 import ThreatVolumeChart from "../components/ThreatVolumeChart";
+
+const API_ENDPOINT = "http://172.18.24.104:8080/";
 
 function mockAlerts() {
   const alerts = [];
@@ -32,8 +35,8 @@ const Home: NextPage = () => {
       <Container>
         <Grid columns="1fr 1fr" gap="2em">
           <Grid.Item column="1 / span 2">
-            <h2>Threats This Week</h2>
-            <ThreatVolumeChart/>
+            <h2>Network Usage</h2>
+            <NetworkVolumeChart/>
           </Grid.Item>
 
           <Grid.Item column="1 / 2">
