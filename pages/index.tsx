@@ -4,6 +4,7 @@ import Head from "next/head";
 import AlertSummary from "../components/AlertSummary";
 import Container from "../components/Container";
 import CPUUtilizationChart from "../components/CPUUtilizationChart";
+import DiskUtilizationChart from "../components/DiskUtilizationChart";
 import NetworkVolumeChart from "../components/NetworkVolumeChart";
 import ThreatCategoryChart from "../components/ThreatCategoryChart";
 import ThreatVolumeChart from "../components/ThreatVolumeChart";
@@ -40,6 +41,17 @@ const Home: NextPage = () => {
             <NetworkVolumeChart/>
           </Grid.Item>
 
+          
+          <Grid.Item column="1 / 2">
+            <h2>Disk Usage</h2>
+            <DiskUtilizationChart />
+          </Grid.Item>
+
+          <Grid.Item column="2 / span 2">
+            <h2>CPU Utilization</h2>
+            <CPUUtilizationChart />
+          </Grid.Item>
+
           <Grid.Item column="1 / 2">
             <h2>Recent Alerts</h2>
             {
@@ -48,11 +60,6 @@ const Home: NextPage = () => {
                   <AlertSummary key={alert.id} id={`${alert.id}`} name={alert.name} description={alert.description} />
               )
             }
-          </Grid.Item>
-
-          <Grid.Item column="2 / span 2">
-            <h2>CPU Utilization</h2>
-            <CPUUtilizationChart />
           </Grid.Item>
         </Grid>
       </Container>

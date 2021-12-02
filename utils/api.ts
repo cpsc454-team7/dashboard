@@ -1,4 +1,4 @@
-export const API_ENDPOINT = "http://184.169.221.27/";
+export const API_ENDPOINT = "https://cpsc454api.mattrick.org/";
 
 export async function getStat(name: string) {
   const endpoint = new URL(name, API_ENDPOINT).href;
